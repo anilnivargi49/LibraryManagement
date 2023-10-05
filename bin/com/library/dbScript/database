@@ -1,0 +1,96 @@
+//oracle
+CREATE SEQUENCE user_seq START WITH 1;
+
+CREATE TABLE users (
+id NUMBER(10) DEFAULT user_seq.nextval NOT NULL,
+user_name  VARCHAR2(50)  NOT NULL,
+role VARCHAR(10) NOT NULL
+);
+
+CREATE SEQUENCE book_seq START WITH 1;
+
+create table book(
+id NUMBER(10) DEFAULT book_seq.nextval NOT NULL,
+book_id VRACHAR(10) NOT NULL,
+book_name VARCHAR(100) NOT NULL,
+book_author VARCHAR(50),
+quantity NUMBER(3) NOT NULL
+);
+
+CREATE SEQUENCE library_account_seq START WITH 1;
+
+create table library_account(
+id NUMBER(10) DEFAULT library_account_seq.nextval NOT NULL
+user_name VARCHAR(50) NOT NULL
+amount NUMBER(4) NOT NULL
+);
+
+CREATE SEQUENCE book_issued_seq START WITH 1;
+
+create table book_issued (
+id NUMBER(10) DEFAULT book_issued_seq.nextval NOT NULL,
+user_name VARCHAR(50) NOT NULL,
+book_id VARCHAR(10) NOT NULL, 
+book_issued VARCHAR(10) NOT NULL,
+book_returned VARCHAR(10),
+charged NUMBER(4)
+);
+
+CREATE SEQUENCE account_transaction_seq START WITH 1;
+
+
+create table account_transaction (
+id NUMBER(10) DEFAULT account_transaction_seq.nextval NOT NULL
+user_name VARCHAR(50) NOT NULL,
+amount NUMBER(4) NOT NULL,
+transaction_type VARCHAR(2) NOT NULL,
+transaction_date VARCHAR(10) NOT NULL
+);
+
+//password - admin@123
+
+//username - SYSTEM
+
+//mysql 
+
+CREATE TABLE users (
+id integer not null auto_increment,
+user_name  VARCHAR(50)  NOT NULL,
+role VARCHAR(10) NOT NULL,
+PRIMARY KEY(id));
+
+create table book(
+id integer not null auto_increment,
+book_id VARCHAR(10) NOT NULL,
+book_name VARCHAR(100) NOT NULL,
+book_author VARCHAR(50),
+quantity integer NOT NULL,
+primary key(id)
+);
+
+create table library_account(
+id integer not null auto_increment,
+user_name VARCHAR(50) NOT NULL,
+amount integer NOT NULL,
+primary key(id)
+);
+
+create table book_issued (
+id integer not null auto_increment,
+user_name VARCHAR(50) NOT NULL,
+book_id VARCHAR(10) NOT NULL, 
+book_issued VARCHAR(10) NOT NULL,
+book_returned VARCHAR(10),
+charged integer,
+primary key(id)
+);
+
+create table account_transaction (
+id integer not null auto_increment,
+user_name VARCHAR(50) NOT NULL,
+amount integer NOT NULL,
+transaction_type VARCHAR(2) NOT NULL,
+transaction_date VARCHAR(10) NOT NULL,
+primary key(id)
+);
+
